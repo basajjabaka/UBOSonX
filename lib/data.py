@@ -190,11 +190,12 @@ CSS = f"""
 h1, h2, h3 {{letter-spacing: -0.01em;}}
 .kpi {{border: 1px solid rgba(255,255,255,0.18); border-radius: 16px; padding: 14px 16px;}}
 .kpi-label {{color: {MUTED}; font-size: 0.85rem;}}
-.kpi-value {{color: {WHITE}; font-size: 1.9rem; font-weight: 700; line-height: 1.2;}}
+.kpi-value {{color: {WHITE}; font-size: clamp(1.25rem, 2.1vw, 1.9rem); font-weight: 700;
+  line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}}
 .kpi-note {{color: {SKY}; font-size: 0.8rem; min-height: 1rem;}}
 .post {{border-left: 3px solid {SKY}; padding: 4px 0 4px 14px; margin: 6px 0 14px;}}
 .post .who {{color: {MUTED}; font-size: 0.85rem;}}
-a {{color: {SKY} !important;}}
+a, [data-testid="stMarkdownContainer"] a {{color: {SKY} !important;}}
 hr {{border-color: rgba(255,255,255,0.18);}}
 </style>
 """
