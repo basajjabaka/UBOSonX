@@ -196,6 +196,15 @@ h1, h2, h3 {{letter-spacing: -0.01em;}}
 .post {{border-left: 3px solid {SKY}; padding: 4px 0 4px 14px; margin: 6px 0 14px;}}
 .post .who {{color: {MUTED}; font-size: 0.85rem;}}
 a, [data-testid="stMarkdownContainer"] a {{color: {SKY} !important;}}
+[data-testid="stSidebar"], [data-testid="stSidebarCollapsedControl"],
+[data-testid="stExpandSidebarButton"] {{display: none;}}
+.app-title {{text-align: center; margin: 0 0 0.6rem; padding: 0;}}
+[class*="st-key-tab-"] a {{border-radius: 999px; padding: 6px 20px; text-decoration: none;}}
+[class*="st-key-tab-off"] a {{border: 1px solid rgba(255,255,255,0.35); background: transparent;}}
+[class*="st-key-tab-off"] a p, [class*="st-key-tab-off"] a span {{color: {WHITE} !important;}}
+[class*="st-key-tab-on"] a {{border: 1px solid {SKY}; background: {SKY};}}
+[class*="st-key-tab-on"] a p, [class*="st-key-tab-on"] a span {{color: {WHITE} !important; font-weight: 700;}}
+.st-key-tabs {{margin-bottom: 1.2rem;}}
 hr {{border-color: rgba(255,255,255,0.18);}}
 </style>
 """
