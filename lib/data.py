@@ -205,6 +205,8 @@ a, [data-testid="stMarkdownContainer"] a {{color: {SKY} !important;}}
 [class*="st-key-tab-on"] a {{border: 1px solid {SKY}; background: {SKY};}}
 [class*="st-key-tab-on"] a p, [class*="st-key-tab-on"] a span {{color: {WHITE} !important; font-weight: 700;}}
 .st-key-tabs {{margin-bottom: 1.2rem;}}
+[class*="st-key-tab-on"] a:hover {{background: {SKY} !important;}}
+[class*="st-key-tab-off"] a:hover {{border-color: {SKY}; background: transparent !important;}}
 hr {{border-color: rgba(255,255,255,0.18);}}
 </style>
 """
