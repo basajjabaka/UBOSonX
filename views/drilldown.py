@@ -13,7 +13,6 @@ from lib.data import (
 
 r = responses(load_posts())
 
-st.title("Drill down")
 st.markdown("Pick the slice you want. Leave a filter empty to keep all. Every chart below follows the filters.")
 
 # Filters: one row of controls above the charts
@@ -27,7 +26,7 @@ with st.container(border=True):
     max_h = float(np.ceil(r["hours_after_post"].max()))
     hours = f5.slider("Hours after the UBOS post", 0.0, max_h, (0.0, max_h), step=1.0, format="%.0f h")
     min_likes = f6.select_slider("Minimum likes", options=[0, 1, 2, 5, 10, 25, 50, 100], value=0)
-    search = st.text_input("Keyword", placeholder="e.g. census, mandate, budget")
+    search = st.text_input("Keyword", placeholder="Enter Keyword")
 
 def pick(col: str, chosen: list) -> pd.Series:
     """An empty selection means no filter on that column."""
@@ -149,5 +148,5 @@ st.dataframe(
         "url": st.column_config.LinkColumn("Link", display_text="Open"),
     },
 )
-st.download_button("Download this slice (CSV)", show.to_csv(index=False).encode("utf-8"),
+st.download_button("Download Dataset", show.to_csv(index=False).encode("utf-8"),
                    "ubos_on_x_slice.csv", "text/csv")

@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 import streamlit as st
 
 from lib.data import (
-    MUTED, POST_URL, SENTIMENT_ORDER, SKY, STANCE_ORDER, THEME_ORDER, WHITE,
+    MUTED, POST_URL, SKY, STANCE_ORDER, THEME_ORDER, WHITE,
     hbar, kpi, load_posts, responses, sentiment_split, style, wordcloud_image,
     word_counts,
 )
@@ -14,7 +14,6 @@ df = load_posts()
 orig = df[df["type"] == "Original"].iloc[0]
 r = responses(df)
 
-st.title("UBOS on X")
 st.markdown(
     f"How people on X responded to the Uganda Bureau of Statistics' "
     f"[public statement]({POST_URL}) (21 Oct 2026) against the Ministry of ICT's "
@@ -95,11 +94,3 @@ for row in r.sort_values("likes", ascending=False).head(5).itertuples():
         {text}</div>""",
         unsafe_allow_html=True,
     )
-
-st.divider()
-agree = (r.loc[r.has_text, "sentiment"] == r.loc[r.has_text, "vader_label"]).mean()
-st.caption(
-    f"Data: {len(r)} replies and quote posts captured from X on 23 Oct 2026. "
-    f"VADER agrees with the reviewed labels on {agree:.0%} of posts with text; "
-    "see the Drill down page for the comparison."
-)
